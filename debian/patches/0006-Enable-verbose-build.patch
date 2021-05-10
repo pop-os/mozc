@@ -1,0 +1,26 @@
+From bf58994b71c423b52fbde5b1668664f46ead6ff2 Mon Sep 17 00:00:00 2001
+From: Nobuhiro Iwamatsu <iwamatsu@debian.org>
+Date: Sun, 27 Dec 2020 22:34:54 +0900
+Subject: [PATCH 6/6] Enable verbose build
+
+Signed-off-by: Nobuhiro Iwamatsu <iwamatsu@debian.org>
+---
+ src/build_mozc.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/build_mozc.py b/src/build_mozc.py
+index 873b6ff9..b4def6c2 100644
+--- a/src/build_mozc.py
++++ b/src/build_mozc.py
+@@ -579,7 +579,7 @@ def BuildWithNinja(options, targets):
+ 
+   for target in targets:
+     (_, target_name) = target.split(':')
+-    RunOrDie([ninja, '-C', build_arg, target_name])
++    RunOrDie([ninja, '-v', '-C', build_arg, target_name])
+ 
+ 
+ def BuildOnWindows(targets):
+-- 
+2.30.0.rc2
+

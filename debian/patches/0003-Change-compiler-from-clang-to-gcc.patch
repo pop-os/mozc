@@ -1,0 +1,52 @@
+From e4f96f52b356d65c63c3e878bdf3d1b266a98721 Mon Sep 17 00:00:00 2001
+From: Nobuhiro Iwamatsu <iwamatsu@debian.org>
+Date: Sun, 27 Dec 2020 22:21:43 +0900
+Subject: [PATCH] Change compiler from clang to gcc
+
+Signed-off-by: Nobuhiro Iwamatsu <iwamatsu@debian.org>
+---
+ src/gyp/common.gypi | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/src/gyp/common.gypi b/src/gyp/common.gypi
+index 273b51fa..d9293abb 100644
+--- a/src/gyp/common.gypi
++++ b/src/gyp/common.gypi
+@@ -105,7 +105,7 @@
+     ],
+     # Libraries for GNU/Linux environment.
+     'linux_ldflags': [
+-      '-lc++',
++      '-lstdc++',
+       '-pthread',
+     ],
+ 
+@@ -123,10 +123,10 @@
+         'compiler_host_version_int': 304,  # Clang 3.4 or higher
+       }],
+       ['target_platform=="Linux"', {
+-        'compiler_target': 'clang',
+-        'compiler_target_version_int': 304,  # Clang 3.4 or higher
+-        'compiler_host': 'clang',
+-        'compiler_host_version_int': 304,  # Clang 3.4 or higher
++        'compiler_target': 'g++',
++        'compiler_target_version_int': 409,  # gcc 4.9 or higher
++        'compiler_host': 'g++',
++        'compiler_host_version_int': 304,  # gcc 4.9 or higher
+       }],
+     ],
+   },
+@@ -413,8 +413,8 @@
+     ['target_platform=="Linux"', {
+       'make_global_settings': [
+         ['AR', '<!(which ar)'],
+-        ['CC', '<!(which clang)'],
+-        ['CXX', '<!(which clang++)'],
++        ['CC', '<!(which gcc)'],
++        ['CXX', '<!(which g++)'],
+         ['LD', '<!(which ld)'],
+         ['NM', '<!(which nm)'],
+         ['READELF', '<!(which readelf)'],
+-- 
+2.30.0.rc2
+

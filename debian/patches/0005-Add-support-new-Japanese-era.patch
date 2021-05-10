@@ -1,0 +1,26 @@
+From 0abee6e2b2cd2c6c824e34b70ec9f6052a912a39 Mon Sep 17 00:00:00 2001
+From: Nobuhiro Iwamatsu <iwamatsu@debian.org>
+Date: Sun, 27 Dec 2020 22:33:17 +0900
+Subject: [PATCH 5/6] Add support new Japanese era
+
+Signed-off-by: Nobuhiro Iwamatsu <iwamatsu@debian.org>
+---
+ src/data/dictionary_oss/dictionary08.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/src/data/dictionary_oss/dictionary08.txt b/src/data/dictionary_oss/dictionary08.txt
+index d25f1920..92e68787 100644
+--- a/src/data/dictionary_oss/dictionary08.txt
++++ b/src/data/dictionary_oss/dictionary08.txt
+@@ -6266,6 +6266,8 @@
+ れいれいと	12	12	7288	れいれいと
+ れいろう	1847	1847	7151	玲瓏
+ れいわ	1847	1847	8253	例話
++れいわ	1895    1895    1690    令和
++れいわ	1898    1898    4000    令和
+ れいんこーと	1847	1847	5564	レインコート
+ れいんじゃー	1847	1847	7559	レインジャー
+ れいんず	1917	1917	3497	レインズ
+-- 
+2.30.0.rc2
+

@@ -1,0 +1,71 @@
+From d751815e5437b5d788a302fe8df39e19510ca7db Mon Sep 17 00:00:00 2001
+From: Nobuhiro Iwamatsu <iwamatsu@debian.org>
+Date: Mon, 28 Dec 2020 20:42:41 +0900
+Subject: [PATCH] Use std::extent instead of std::size
+
+Signed-off-by: Nobuhiro Iwamatsu <iwamatsu@debian.org>
+---
+ src/rewriter/date_rewriter.cc    | 9 +++++----
+ src/rewriter/fortune_rewriter.cc | 3 ++-
+ 2 files changed, 7 insertions(+), 5 deletions(-)
+
+diff --git a/src/rewriter/date_rewriter.cc b/src/rewriter/date_rewriter.cc
+index 22f24bc8..a5aad170 100644
+--- a/src/rewriter/date_rewriter.cc
++++ b/src/rewriter/date_rewriter.cc
+@@ -40,6 +40,7 @@
+ #include <algorithm>
+ #include <cstdio>
+ #include <string>
++#include <type_traits>
+ #include <vector>
+ 
+ #include "base/clock.h"
+@@ -739,9 +740,9 @@ bool DateRewriter::AdToEra(int year, int month,
+   // The order is south to north.
+   std::vector<std::string> eras;
+   bool r = false;
+-  r = AdToEraForCourt(kEraData, std::size(kEraData), year, &eras);
++  r = AdToEraForCourt(kEraData, std::extent<decltype(kEraData)>::value, year, &eras);
+   if (year > 1331 && year < 1393) {
+-    r |= AdToEraForCourt(kNorthEraData, std::size(kNorthEraData), year, &eras);
++    r |= AdToEraForCourt(kNorthEraData, std::extent<decltype(kNorthEraData)>::value, year, &eras);
+   }
+   // 1334 requires dedupe
+   for (int i = 0; i < eras.size(); ++i) {
+@@ -763,9 +764,9 @@ bool DateRewriter::EraToAd(const std::string &key,
+                            std::vector<std::string> *descriptions) {
+   bool ret = false;
+   // The order is south to north, older to newer
+-  ret |= EraToAdForCourt(kEraData, std::size(kEraData), key, results,
++  ret |= EraToAdForCourt(kEraData, std::extent<decltype(kEraData)>::value, key, results,
+                          descriptions);
+-  ret |= EraToAdForCourt(kNorthEraData, std::size(kNorthEraData), key, results,
++  ret |= EraToAdForCourt(kNorthEraData, std::extent<decltype(kNorthEraData)>::value, key, results,
+                          descriptions);
+   return ret;
+ }
+diff --git a/src/rewriter/fortune_rewriter.cc b/src/rewriter/fortune_rewriter.cc
+index d4cd0909..5e12ffea 100644
+--- a/src/rewriter/fortune_rewriter.cc
++++ b/src/rewriter/fortune_rewriter.cc
+@@ -32,6 +32,7 @@
+ #include <algorithm>
+ #include <ctime>
+ #include <string>
++#include <type_traits>
+ 
+ #include "base/clock.h"
+ #include "base/logging.h"
+@@ -97,7 +98,7 @@ class FortuneData {
+     uint32 random = 0;
+     Util::GetRandomSequence(reinterpret_cast<char *>(&random), sizeof(random));
+     const int level = random % kMaxLevel;
+-    for (int i = 0; i < std::size(kNormalLevels); ++i) {
++    for (int i = 0; i < std::extent<decltype(kNormalLevels)>::value; ++i) {
+       if (level <= levels[i]) {
+         fortune_type_ = static_cast<FortuneType>(i);
+         break;
+-- 
+2.30.0.rc2
+
