@@ -57,7 +57,7 @@ Description: Mozc input method - data files for fcitx
  This open-source project originates from Google Japanese Input.
 
 Package: ibus-mozc
-Architecture: i386 amd64 armel armhf arm64 riscv64
+Architecture: amd64
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
@@ -78,7 +78,7 @@ Description: Mozc engine for IBus - Client of the Mozc input method
  This open-source project originates from Google Japanese Input.
 
 Package: uim-mozc
-Architecture: i386 amd64 armel armhf arm64 riscv64
+Architecture: amd64
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
@@ -100,7 +100,7 @@ Description: Mozc engine for uim - Client of the Mozc input method
  uim-mozc provides client part of the Mozc input method.
 
 Package: fcitx-mozc
-Architecture: i386 amd64 armel armhf arm64 riscv64
+Architecture: amd64
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
@@ -127,7 +127,7 @@ Description: Mozc engine for fcitx - Client of the Mozc input method
  fcitx-mozc provides client part of the Mozc input method.
 
 Package: fcitx5-mozc
-Architecture: i386 amd64 armel armhf arm64 riscv64
+Architecture: amd64
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
@@ -152,7 +152,7 @@ Description: Mozc engine for fcitx5 - Client of the Mozc input method
  fcitx5-mozc provides client part of the Mozc input method.
 
 Package: emacs-mozc
-Architecture: i386 amd64 armel armhf arm64 riscv64
+Architecture: amd64
 Depends:
  ${misc:Depends}, emacs | emacs23 | emacs24,
  emacs-mozc-bin (= ${binary:Version})
@@ -166,7 +166,7 @@ Description: Mozc for Emacs
  This open-source project originates from Google Japanese Input.
 
 Package: emacs-mozc-bin
-Architecture: i386 amd64 armel armhf arm64 riscv64
+Architecture: amd64
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
@@ -180,7 +180,7 @@ Description: Helper module for emacs-mozc
  This open-source project originates from Google Japanese Input.
 
 Package: mozc-server
-Architecture: i386 amd64 armel armhf arm64 riscv64
+Architecture: amd64
 Depends:
  ${misc:Depends},
  ${shlibs:Depends}
@@ -194,7 +194,7 @@ Description: Server of the Mozc input method
  This open-source project originates from Google Japanese Input.
 
 Package: mozc-utils-gui
-Architecture: i386 amd64 armel armhf arm64 riscv64
+Architecture: amd64
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
