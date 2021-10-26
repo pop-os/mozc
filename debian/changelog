@@ -1,3 +1,9 @@
+mozc (2.26.4220.100+dfsg-4.1ubuntu0.1pop0) impish; urgency=medium
+
+  * Bump version to supercede Ubuntu version
+
+ -- Jeremy Soller <jeremy@system76.com>  Tue, 26 Oct 2021 15:22:09 -0600
+
 mozc (2.26.4220.100+dfsg-4.1pop0) impish; urgency=medium
 
   * Do not add input method to Gnome automatically
