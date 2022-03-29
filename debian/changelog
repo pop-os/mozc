@@ -1,14 +1,24 @@
-mozc (2.26.4220.100+dfsg-4.1ubuntu0.1pop0) impish; urgency=medium
+mozc (2.26.4220.100+dfsg-5.1build1) jammy; urgency=medium
 
-  * Bump version to supercede Ubuntu version
+  * No-change rebuild against latest abseil
 
- -- Jeremy Soller <jeremy@system76.com>  Tue, 26 Oct 2021 15:22:09 -0600
+ -- Jeremy Bicha <jeremy.bicha@canonical.com>  Tue, 08 Feb 2022 17:40:19 -0500
 
-mozc (2.26.4220.100+dfsg-4.1pop0) impish; urgency=medium
+mozc (2.26.4220.100+dfsg-5.1) unstable; urgency=medium
 
-  * Do not add input method to Gnome automatically
+  * Non-maintainer upload
+  * Add autostart file to launch Xwayland on startup of wayland session
+    - Proved to be useful on Ubuntu 21.10 (LP: #1946969)
 
- -- Jeremy Soller <jeremy@system76.com>  Thu, 09 Sep 2021 08:58:44 -0600
+ -- Gunnar Hjalmarsson <gunnarhj@debian.org>  Sat, 16 Oct 2021 21:11:28 +0200
+
+mozc (2.26.4220.100+dfsg-5) unstable; urgency=medium
+
+  * Use 'command -v' instead of which (Closes: #992724).
+    - Updae d/patches/0003-Change-compiler-from-clang-to-gcc.patch
+    - Add d/patches/0009-common.gypi-Use-command-v-instead-of-which.patch
+
+ -- Nobuhiro Iwamatsu <iwamatsu@debian.org>  Mon, 23 Aug 2021 09:59:51 +0900
 
 mozc (2.26.4220.100+dfsg-4.1) unstable; urgency=medium
 
