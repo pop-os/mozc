@@ -1,14 +1,10 @@
-mozc (2.26.4220.100+dfsg-5.1pop0) jammy; urgency=medium
+mozc (2.26.4220.100+dfsg-5.2) unstable; urgency=medium
 
-  * Pop!_OS patches
+  * Non-maintainer upload
+  * Install missing icon symlink for fcitx5-mozc
+    - Closes: #1009254, LP: #1968454
 
- -- Jeremy Soller <jeremy@system76.com>  Tue, 29 Mar 2022 13:49:46 -0600
-
-mozc (2.26.4220.100+dfsg-5.1build1) jammy; urgency=medium
-
-  * No-change rebuild against latest abseil
-
- -- Jeremy Bicha <jeremy.bicha@canonical.com>  Tue, 08 Feb 2022 17:40:19 -0500
+ -- Gunnar Hjalmarsson <gunnarhj@debian.org>  Sun, 10 Apr 2022 15:04:16 +0200
 
 mozc (2.26.4220.100+dfsg-5.1) unstable; urgency=medium
 
